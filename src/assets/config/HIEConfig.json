@@ -1,0 +1,16 @@
+{
+  "uris": {
+    "baseuri": "SYNAPSE_DYNAMIC_URI",
+    "carerecordbaseuri": "CARERECORD_URI",
+    "terminologybaseuri": "TERMINOLOGY_URI/api",
+    "cernerhiebaseuri": "https://uktestcert.cernerhie.org/hiempages"
+  },
+  "enablelogging": true,
+  "prodbuild": true,
+  "cernerencryptionpassword": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+  "cernernbitsencryption": 256,
+  "cernerexternal": "both",
+  "cernerorguser": "aes_dev",
+  "cernerorgpassword": "xxx_xxx_xxxxxxxxx",
+  "idtypecode": "NHS"
+}
