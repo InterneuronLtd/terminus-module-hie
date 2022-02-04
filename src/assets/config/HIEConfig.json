@@ -10,7 +10,7 @@
   "cernerencryptionpassword": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
   "cernernbitsencryption": 256,
   "cernerexternal": "both",
-  "cernerorguser": "aes_dev",
+  "cernerorguser": "xxxxxxxxxx",
   "cernerorgpassword": "xxx_xxx_xxxxxxxxx",
   "idtypecode": "NHS"
 }
