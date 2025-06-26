@@ -1,7 +1,7 @@
 //BEGIN LICENSE BLOCK 
 //Interneuron Terminus
 
-//Copyright(C) 2023  Interneuron Holdings Ltd
+//Copyright(C) 2025  Interneuron Limited
 
 //This program is free software: you can redistribute it and/or modify
 //it under the terms of the GNU General Public License as published by
@@ -137,9 +137,9 @@ export class AppComponent implements OnInit, OnDestroy {
 
             //emit events after getting initial config. //this happens on first load only.
             //this.appService.logToConsole("Service reference is being published from init config");
-            this.subjects.apiServiceReferenceChange.next();
+            this.subjects.apiServiceReferenceChange.next(undefined);
             //this.appService.logToConsole("personid is being published from init config");
-            this.subjects.personIdChange.next();
+            this.subjects.personIdChange.next(undefined);
 
           }));
 
@@ -284,6 +284,11 @@ export class AppComponent implements OnInit, OnDestroy {
                 var orgUser = this.appService.cernerOrgUser;
                 var orgPassword = this.appService.cernerOrgPassword;
 
+                console.log('Before removing the domain name & backslash: ', this.loggedInUsername);
+
+                this.loggedInUsername = this.loggedInUsername?.toLowerCase().replace('rnoht\\', '');
+                console.log('After removing the domain name & backslash: ', this.loggedInUsername);
+
                 //get random value from array
                 // var patients = [
                 //   "PAT_CMRN=4853379371&USR_NAME=GAUTAM.BHATT&USR_POSITION=HIE Level 1&USR_DSPLYNM=BHATT,GAUTAM&USR_ORG=RAN&USR_FAC=RAN&PAT_FNAME=SARAH&PAT_LNAME=JORDAN&PAT_DOB=19220821&EXTERNAL="+ external +"&PERMISSION=Yes&EXPIRATION=" + isoDate.substring(0, isoDate.length - 4) +"&ORG_USER="+ orgUser +"&ORG_PASS=" + orgPassword, 
@@ -297,7 +302,9 @@ export class AppComponent implements OnInit, OnDestroy {
                 //console.log(randomPatient);
 
                 var cipherText = Aes.Ctr.encrypt(randomPatient, password, nBits);
-                //console.log(cipherText);
+                //console.log('Cipher text: ', cipherText);
+
+                //console.log('Complete URI: ', `${cernerUri}?${cipherText}`);
 
                 this.toggleiFrame = false;
                 this.cernerHIEResponse = this.sanitizer.bypassSecurityTrustResourceUrl(`${cernerUri}?${cipherText}`);

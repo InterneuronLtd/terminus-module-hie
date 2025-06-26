@@ -7,10 +7,10 @@
   },
   "enablelogging": true,
   "prodbuild": true,
-  "cernerencryptionpassword": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+  "cernerencryptionpassword": "9cernercep1cert7birdDog8RocK98",
   "cernernbitsencryption": 256,
   "cernerexternal": "both",
   "cernerorguser": "aes_dev",
-  "cernerorgpassword": "xxx_xxx_xxxxxxxxx",
+  "cernerorgpassword": "aes_dev_password",
   "idtypecode": "NHS"
 }
